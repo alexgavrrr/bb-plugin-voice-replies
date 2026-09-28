@@ -6,8 +6,8 @@ description: Use when the user asks how to enable, configure, or troubleshoot sp
 # Voice Replies
 
 In any main bb chat, on desktop or phone through BB Remote Access, press the
-small speaker icon **Озвучить ответ** under the desired message. It stays
-visible without hover on desktop and mobile. Press **Озвучить ответ** in the
+small speaker icon **Озвучить ответ** under the desired message. On desktop
+it appears on hover together with the other message actions. Press **Озвучить ответ** in the
 panel, then Play when ready. Select an older
 answer or edit text under **Другой ответ или фрагмент**, collapsed by default. Play each part using
 its audio controls, or download the MP3. No automatic generation or playback.

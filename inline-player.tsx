@@ -17,19 +17,6 @@ export function registerInlinePlayers(app: PluginAppBuilder) {
   app.contentScripts.register({
     id: "inline-audio-anchors",
     mount({ signal }) {
-      // Keep only our existing message action visible without hover. No extra
-      // toolbar or composer row. The icon asset scopes this to Voice Replies.
-      const actionStyle = document.createElement("style");
-      actionStyle.dataset.voiceRepliesActions = "true";
-      actionStyle.textContent = `
-        button[aria-label="Озвучить ответ"]:has([data-plugin-icon-asset^="/api/v1/plugins/voice-replies/assets/"]) {
-          opacity: 1;
-        }
-        button[aria-label="Озвучить ответ"]:disabled:has([data-plugin-icon-asset^="/api/v1/plugins/voice-replies/assets/"]) {
-          opacity: .4;
-        }
-      `;
-      document.head.append(actionStyle);
       const anchors = new Map<HTMLElement, Anchor>();
       let serial = 0;
       let timer: ReturnType<typeof setTimeout> | undefined;
@@ -67,7 +54,7 @@ export function registerInlinePlayers(app: PluginAppBuilder) {
       observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-timeline-row-id"] });
       scan();
       return () => {
-        observer.disconnect(); clearTimeout(timer); actionStyle.remove();
+        observer.disconnect(); clearTimeout(timer);
         for (const anchor of anchors.values()) anchor.element.remove();
         anchors.clear(); notify([]); scan = () => {};
       };

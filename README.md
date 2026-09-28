@@ -1,7 +1,8 @@
 # Voice Replies for bb
 
 Press the small speaker icon **Озвучить ответ** under a message, then
-**Озвучить ответ** in the panel. The icon stays visible without hovering. When it is ready, press Play. The speaker icon is shipped as an SVG
+**Озвучить ответ** in the panel. Like the other message actions, the icon
+appears on hover. When it is ready, press Play. The speaker icon is shipped as an SVG
 and works in both desktop bb and BB Remote Access.
 
 An answer with saved audio also gets a compact native player directly under
@@ -99,9 +100,8 @@ public content script to add owned DOM nodes beneath exact
 them. A mutation observer handles virtualized rows. All nodes, observers and
 timers are disposed on unload. The text and host message DOM are untouched.
 If bb changes that DOM attribute, history remains available in the sidebar;
-recheck the small adapter in `inline-player.tsx` after a bb upgrade. The same
-content script owns a scoped style that keeps the existing speaker action
-visible without hover; it removes the style on unload. No composer banner.
+recheck the small adapter in `inline-player.tsx` after a bb upgrade. No
+composer banner.
 
 ## Development and checks
 
