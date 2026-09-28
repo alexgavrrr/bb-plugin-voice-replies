@@ -1,0 +1,45 @@
+{
+  "name": "bb-plugin-voice-replies",
+  "version": "0.2.1",
+  "type": "module",
+  "engines": {
+    "bb": ">=0.44",
+    "bbPluginSdk": ">=0.5.29"
+  },
+  "bb": {
+    "name": "Voice Replies",
+    "description": "Озвучивание ответов в чатах bb через OpenAI.",
+    "branding": {
+      "icon": "./assets/speaker.svg",
+      "experimental_icons": {
+        "speaker": "./assets/speaker.svg"
+      }
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.5.29",
+    "@testing-library/react": "^16.3.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "better-sqlite3": "^13.0.3",
+    "cron-parser": "^5.10.1",
+    "hono": "^4.13.9",
+    "jsdom": "^29.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.11"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "bb plugin build"
+  }
+}
